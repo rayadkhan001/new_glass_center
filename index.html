@@ -1,88 +1,229 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>New Glass Center</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- HERO SECTION -->
-  <section class="bg-gray-50">
-    <div class="max-w-6xl mx-auto px-6 py-20 flex flex-col-reverse md:flex-row items-center md:justify-between gap-10">
-      <div class="flex-1 text-center md:text-left space-y-6">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
-          Your Trusted Glass & Window Experts
-        </h1>
-        <p class="text-gray-600 text-lg sm:text-xl">
-          We provide high-quality glass solutions for homes and businesses with professional installation and service.
+    <!-- TITLE & FAVICON -->
+    <title>NEW GLASS CENTER</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo/pricing_icon_2.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/logo/pricing_icon_2.png" />
+
+    <!-- FONT AWESOME CDN LINK -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet"/>
+
+    <!-- CUSTOM CSS LINK -->
+    <link rel="stylesheet" href="assets/css/index.css" />
+  </head>
+
+  <body class="roboto-font">
+    <!-- NAVBAR -->
+    <div class="navbar bg-white shadow-md px-4 md:px-6 flex items-center justify-between sticky top-0 z-50">
+        <!-- Logo -->
+        <div class="flex-1">
+            <a href="index.html" class="text-2xl font-bold text-[#1c232b]">
+                <span class="block md:hidden">NGC</span>
+                <span class="hidden md:block">NEW GLASS CENTER</span>
+            </a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex flex-1 justify-center">
+            <ul class="menu menu-horizontal px-1 text-[#1c232b] bg-transparent border-none">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#glass">Glass Types</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Mobile Burger -->
+        <div class="lg:hidden">
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </label>
+
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-2 p-4 shadow bg-black text-[#f3f4f6] font-bold rounded-box w-52">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#glass">Glass Types</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero-section">
+        <div id="particles-js"></div>
+        <img src="assets/img/banner.jpg" class="hero-image" />
+
+        <div class="hero-content-box px-4 md:px-0">
+            <h1 class="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight"><span class="block md:hidden">NGC</span><span class="hidden md:block">NEW GLASS CENTER</span></h1>
+            <p class="hero-subtitle text-[#f3f4f6] text-sm sm:text-base md:text-lg mt-3 md:mt-5 max-w-xl mx-auto">Serving customers with professional glass cutting since 1962</p>
+
+            <button onclick="showModal()" class="btn text-[#f3f4f6] bg-[#1c232b] hover:bg-[#f3f4f6] hover:text-[#1c232b] border-none duration-300 ease-in-out mt-5">Contact Us</button>
+        </div>
+    </section>
+
+    <!-- CONTACT MODAL -->
+    <dialog id="contact-modal" class="modal">
+        <div class="modal-box">
+            <h3 class="font-bold text-lg">Contact Us</h3>
+            <p class="py-4">Have a question or need custom glass cutting? <br>Call us at <b>+88 01710250642</b> and we'll be happy to assist you.</p>
+            <br>
+            <br>
+            <div class="mt-6 md:mt-0">
+            <h6 class="footer-title mb-2 text-white text-sm md:text-base">Follow Us</h6>
+                <div class="flex gap-4 text-xl">
+                    <a href="#contact" class="hover:text-blue-600 transition-colors duration-200 text-2xl"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#contact" class="hover:text-green-500 transition-colors duration-200 text-2xl"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#contact" class="hover:text-pink-500 transition-colors duration-200 text-2xl"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- ABOUT -->
+    <section id="about" class="section px-4 md:px-6">
+        <h2 class="section-title text-[#f3f4f6] text-2xl sm:text-3xl md:text-4xl">About Our Business</h2>
+        <p class="section-text text-[#f3f4f6] mt-4 text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
+            NEW GLASS CENTER was established in 1962 and has been serving customers
+            for decades with high quality glass cutting and finishing services. Our
+            workshop uses modern edge polishing machines to create smooth and safe
+            glass edges for homes, offices and shops.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-          <a href="#services" class="bg-blue-600 text-white px-8 py-4 rounded-lg shadow-lg hover:bg-blue-700 transition">
-            Get a Quote
-          </a>
-          <a href="#contact" class="border border-blue-600 text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition">
-            Contact Us
-          </a>
-        </div>
-      </div>
-      <div class="flex-1">
-        <!-- Use your original banner image -->
-        <img src="assets/img/banner.jpg" alt="Glass Work" class="w-full max-w-md mx-auto rounded-lg shadow-xl hover:scale-105 transition-transform duration-300"/>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SERVICES SECTION -->
-  <section id="services" class="bg-white py-20">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-12">Our Services</h2>
-      <div class="grid md:grid-cols-3 gap-10">
-        <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition">
-          <img src="assets/img/pricing_icon_2.png" class="mx-auto mb-4 w-16" alt="Window Installation">
-          <h3 class="font-semibold text-xl mb-2">Window Installation</h3>
-          <p class="text-gray-600">Professional installation with high-quality materials for your home or office.</p>
-        </div>
-        <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition">
-          <img src="assets/img/pricing_icon_2.png" class="mx-auto mb-4 w-16" alt="Glass Replacement">
-          <h3 class="font-semibold text-xl mb-2">Glass Replacement</h3>
-          <p class="text-gray-600">Fast and safe replacement of broken or old glass panels.</p>
-        </div>
-        <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition">
-          <img src="assets/img/pricing_icon_2.png" class="mx-auto mb-4 w-16" alt="Maintenance">
-          <h3 class="font-semibold text-xl mb-2">Maintenance</h3>
-          <p class="text-gray-600">Regular service to keep your windows and glass clean and functional.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- SERVICES -->
+    <section id="services" class="bg-gray-100 py-16 px-4 md:px-6">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-center text-[#1c232b]">Our Services</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-10">
+            <!-- Glass Cutting -->
+            <div class="card bg-white shadow-xl">
+                <div class="card-body text-center">
+                    <h2 class="card-title font-medium text-gray-600 justify-center text-lg sm:text-xl">Glass Cutting</h2>
+                    <p class="text-sm sm:text-base">Custom glass cutting according to your measurements.</p>
+                </div>
+            </div>
 
-  <!-- FOOTER SECTION -->
-  <footer class="bg-gray-800 text-gray-300 py-12">
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-      <div>
-        <h4 class="font-bold text-lg mb-4 text-white">New Glass Center</h4>
-        <p>Providing high-quality glass solutions for homes and businesses since 1962.</p>
-      </div>
-      <div>
-        <h4 class="font-bold text-lg mb-4 text-white">Quick Links</h4>
-        <ul class="space-y-2">
-          <li><a href="#services" class="hover:text-white transition">Services</a></li>
-          <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
-          <li><a href="#about" class="hover:text-white transition">About Us</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-bold text-lg mb-4 text-white">Contact</h4>
-        <p>Email: info@newglasscenter.com</p>
-        <p>Phone: +880 123 456 789</p>
-      </div>
-    </div>
-    <div class="text-center mt-8 text-gray-500 text-sm">© 2026 New Glass Center. All rights reserved.</div>
-  </footer>
+            <!-- Edge Polishing -->
+            <div class="card bg-white shadow-xl">
+                <div class="card-body text-center">
+                    <h2 class="card-title font-medium text-gray-600 justify-center text-lg sm:text-xl">Edge Polishing</h2>
+                    <p class="text-sm sm:text-base">Smooth finishing using automatic glass polishing machines.</p>
+                </div>
+            </div>
 
-  <script src="assets/js/main.js"></script>
-</body>
+            <!-- Mirror Cutting -->
+            <div class="card bg-white shadow-xl">
+                <div class="card-body text-center">
+                    <h2 class="card-title font-medium text-gray-600 justify-center text-lg sm:text-xl">Mirror Cutting</h2>
+                    <p class="text-sm sm:text-base">Custom mirrors for homes, bathrooms and shops.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GLASS TYPES -->
+    <section id="glass" class="section px-4 md:px-6">
+        <h2 class="section-title text-[#f3f4f6] text-2xl sm:text-3xl md:text-4xl">Types of Glass</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto mt-8">
+            <div class="glass-card cursor-pointer hover:bg-gray-600 hover:text-white transition duration-300 ease-in-out font-medium text-gray-500 p-4">Clear Glass</div>
+            <div class="glass-card cursor-pointer hover:bg-gray-600 hover:text-white transition duration-300 ease-in-out font-medium text-gray-500 p-4">Tempered Glass</div>
+            <div class="glass-card cursor-pointer hover:bg-gray-600 hover:text-white transition duration-300 ease-in-out font-medium text-gray-500 p-4">Frosted Glass</div>
+            <div class="glass-card cursor-pointer hover:bg-gray-600 hover:text-white transition duration-300 ease-in-out font-medium text-gray-500 p-4">Mirror Glass</div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section bg-gray-100 px-4 md:px-6">
+        <h2 class="section-title text-[#1c232b] text-2xl sm:text-3xl md:text-4xl">Why Choose Us</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-8">
+            <div class="feature-box bg-white shadow p-6 text-center">
+                <h3 class="font-medium text-gray-500 text-lg sm:text-xl">60+ Years Experience</h3>
+                <p class="text-sm sm:text-base mt-2">Expertise that you can trust. Decades of experience in precise glass cutting and finishing.</p>
+            </div>
+
+            <div class="feature-box bg-white shadow p-6 text-center">
+                <h3 class="font-medium text-gray-500 text-lg sm:text-xl">Precision Cutting</h3>
+                <p class="text-sm sm:text-base mt-2">Every piece of glass is cut accurately to your measurements.</p>
+            </div>
+
+            <div class="feature-box bg-white shadow p-6 text-center">
+                <h3 class="font-medium text-gray-500 text-lg sm:text-xl">Professional Finish</h3>
+                <p class="text-sm sm:text-base mt-2">High-quality finishing ensures safety and durability for homes, offices, and shops.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section px-4 md:px-6">
+        <h2 class="section-title text-[#f3f4f6] text-2xl sm:text-3xl md:text-4xl">Our Work</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto mt-8">
+            <img src="assets/img/ourwork1.jpeg" class="gallery-img w-full h-48 sm:h-60 md:h-64 object-cover rounded"/>
+            <img src="assets/img/ourwork2.jpeg" class="gallery-img w-full h-48 sm:h-60 md:h-64 object-cover rounded"/>
+            <img src="assets/img/ourwork3.jpeg" class="gallery-img w-full h-48 sm:h-60 md:h-64 object-cover rounded"/>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section bg-gray-100 text-center px-4 md:px-6">
+        <h2 class="section-title text-[#1c232b] text-2xl sm:text-3xl md:text-4xl">Contact Us</h2>
+        <p class="mt-4 font-medium text-gray-700 text-sm sm:text-base md:text-lg">Visit our shop or call us for custom glass orders.</p>
+
+        <div class="mt-6">
+            <p class="text-[#1c232b] text-sm sm:text-base md:text-base"><b class="text-gray-700">Phone:</b> +88 01710250642</p>
+            <p class="text-[#1c232b] text-sm sm:text-base md:text-base"><b class="text-gray-700">Location:</b> Mohakhali, Dhaka</p>
+        </div>
+    </section>
+
+    <footer class="bg-black text-white px-6 py-8">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center">
+    
+            <!-- LEFT: Company Info -->
+            <div class="space-y-2 text-sm md:text-base">
+                <p class="font-semibold">NEW GLASS CENTER</p>
+                <p>Serving customers since 1962</p>
+                <p class="text-gray-400 text-xs md:text-sm">© <span id="year"></span> - All rights reserved by NEW GLASS CENTER</p>
+            </div>
+
+            <!-- RIGHT: Social Icons -->
+            <div class="mt-6 md:mt-0">
+            <h6 class="footer-title mb-2 text-white text-sm md:text-base">Follow Us</h6>
+                <div class="flex gap-4 text-xl">
+                    <a onclick="showModal()" href="#contact" class="hover:text-blue-600 transition-colors duration-200 text-2xl"><i class="fa-brands fa-facebook"></i></a>
+                    <a onclick="showModal()" href="#contact" class="hover:text-green-500 transition-colors duration-200 text-2xl"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a onclick="showModal()" href="#contact" class="hover:text-pink-500 transition-colors duration-200 text-2xl"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script src="assets/js/index.js"></script>
+  </body>
 </html>
